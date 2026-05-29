@@ -16,5 +16,58 @@ SELECT * FROM forum_posts WHERE date >= '2048-03-01' AND date < '2048-05-1' AND 
 -- 'author' smart-money-44
 -- content '%EmptyStack%'
 
+SELECT * FROM forum_accounts WHERE username = 'smart-money-44';
+--this will give us name and last name
+
+    username    | first_name | last_name 
+----------------+------------+-----------
+ smart-money-44 | Brad       | Steele
 
 
+ -- Then I used select all limit 30 to get idea of list and to know what to look for
+ SELECT * FROM emptystack_accounts LIMIT 30;
+
+ ainframe_override=# SELECT * FROM emptystack_accounts LIMIT 30;
+
+
+         username          |    password     | first_name |     last_name      
+---------------------------+-----------------+------------+--------------------
+ ultimate-heartache-43     | N9b9w_n3LzelnDe | Tobin      | Stehr
+ that-substitution-67      | Xw3NFbTiD9kLy0c | Jensen     | Hoeger-Maggio
+ rapid-dependency-93       | P2WwUdknUdbvy_X | Amira      | Langworth
+ content-repeat-46         | Q1QsN3KmaTa99Rv | Viviane    | Hahn
+ focused-smoke-98          | _QD8t8rncLOEuyP | Casper     | Wiza
+ ironclad-developmental-87 | o9H1Do0KT5RkV08 | Alex       | Marvin
+ important-range-40        | fsj6N9JzmphUc52 | Llewellyn  | Romaguera
+ bowed-secrecy-88          | 50kaYQ_TbdwWgF9 | Brandt     | Harvey
+ grizzled-carboxyl-76      | oQ1dlFFpIMSHuDj | Lee        | Powlowski
+ mindless-flood-46         | _ad9n_KU0g1lJD5 | Damon      | Simonis
+ married-entry-11          | Qe9hMEM5ZM_0Re0 | Madonna    | Lockman-McCullough
+
+
+ -- writing down name and last name to find password
+
+ mainframe_override=# SELECT * FROM emptystack_accounts WHERE first_name = 'Brad' AND last_name = 'Steele';
+ username | password | first_name | last_name 
+----------+----------+------------+-----------
+(0 rows)
+
+mainframe_override=# SELECT * FROM emptystack_accounts WHERE first_name = 'Brad';
+      username      |    password     | first_name | last_name 
+--------------------+-----------------+------------+-----------
+ worse-insolence-73 | SJXJhMrH2jqjBJ_ | Brad       | Smith
+(1 row)
+
+mainframe_override=# SELECT * FROM emptystack_accounts WHERE last_name = 'Steele';
+    username    |  password   | first_name | last_name 
+----------------+-------------+------------+-----------
+ triple-cart-38 | password456 | Andrew     | Steele
+ lance-main-11  | password789 | Lance      | Steele
+(2 rows)
+
+mainframe_override=# SELECT * FROM emptystack_accounts WHERE username = 'smart-money-44';
+ username | password | first_name | last_name 
+----------+----------+------------+-----------
+(0 rows)
+
+-- sooo they share last name right and missing one more clue i think
