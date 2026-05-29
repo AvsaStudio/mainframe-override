@@ -70,4 +70,33 @@ mainframe_override=# SELECT * FROM emptystack_accounts WHERE username = 'smart-m
 ----------+----------+------------+-----------
 (0 rows)
 
--- sooo they share last name right and missing one more clue i think
+-- sooo they share last name 
+
+Debugger attached.
+Username: triple-cart-38
+Password: password456
+Welcome, triple-cart-38!
+Loading messages and projects...
+Your data has been loaded to emptystack.sql. Have a nice day!
+Waiting for the debugger to disconnect...
+
+-- self-driving taxis from emptystack_messages
+
+SELECT * FROM emptystack_messages WHERE subject ILIKE '%taxi%' OR body ILIKE '%taxi%';
+
+mainframe_override=# SELECT * FROM emptystack_messages WHERE subject ILIKE '%taxi%' OR body ILIKE '%taxi%';
+  id   |     from     |       to       |   subject    |                            body                            
+-------+--------------+----------------+--------------+------------------------------------------------------------
+ LidWj | your-boss-99 | triple-cart-38 | Project TAXI | Deploy Project TAXI by end of week. We need this out ASAP.
+(1 row)
+
+
+-- emptystack_accounts 
+
+SELECT * FROM emptystack_projects WHERE code = 'TAXI';
+    id    | code 
+----------+------
+ DczE0v2b | TAXI
+(1 row)
+
+
