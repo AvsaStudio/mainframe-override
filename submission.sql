@@ -80,7 +80,7 @@ Loading messages and projects...
 Your data has been loaded to emptystack.sql. Have a nice day!
 Waiting for the debugger to disconnect...
 
--- self-driving taxis from emptystack_messages
+-- username your-boss-99 
 
 SELECT * FROM emptystack_messages WHERE subject ILIKE '%taxi%' OR body ILIKE '%taxi%';
 
@@ -91,12 +91,39 @@ mainframe_override=# SELECT * FROM emptystack_messages WHERE subject ILIKE '%tax
 (1 row)
 
 
--- emptystack_accounts 
+--   password of boss notagaincarter
 
-SELECT * FROM emptystack_projects WHERE code = 'TAXI';
-    id    | code 
-----------+------
- DczE0v2b | TAXI
+mainframe_override=# SELECT * FROM emptystack_accounts WHERE username= 'your-boss-99';
+   username   |    password    | first_name | last_name 
+--------------+----------------+------------+-----------
+ your-boss-99 | notagaincarter | Skylar     | Singer
 (1 row)
 
 
+
+-- now going to emptystack_projects to get project id 
+
+mainframe_override=# SELECT * FROM emptystack_projects WHERE code = 'TAXI';
+    id    | code 
+----------+--------
+ DczE0v2b | TAXI
+
+
+-- DID it
+
+Username: your-boss-99
+Password: notagaincarter
+Welcome, your-boss-99.
+Project ID: DczE0v2b
+Initiating project shutdown sequence...
+5...
+4...
+3...
+2...
+1...
+Project shutdown complete.
+Waiting for the debugger to disconnect...
+(base) salomemiller@Mac mainframe-override % 
+
+
+-- it is taking me long time to understand to what do we use to connect to psql like when we say psql -f and project name still confused to what to write 
